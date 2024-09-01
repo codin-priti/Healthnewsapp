@@ -4,14 +4,13 @@ const Card = ({ data }) => {
   console.log(data);
 
   const bookmarkarticle = (article) => {
-    // Get existing bookmarks from local storage
+
     const bookmarks = JSON.parse(localStorage.getItem('bookmarkedarticles')) || [];
 
-    // Check if the article is already bookmarked
     const isBookmarked = bookmarks.some((item) => item.url === article.url);
 
     if (!isBookmarked) {
-        // Add new article to bookmarks
+
         bookmarks.push(article);
         localStorage.setItem('bookmarkearticle', JSON.stringify(bookmarks));
         alert("Book mark added");
